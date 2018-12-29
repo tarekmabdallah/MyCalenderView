@@ -66,7 +66,7 @@ public class MonthCalender {
         setMonthCalenderFragment();
         activity.getSupportFragmentManager()
                 .beginTransaction()
-                .add(resFrameLayout, monthCalenderFragment)
+                .replace(resFrameLayout, monthCalenderFragment)
                 .commit();
     }
 
@@ -77,6 +77,11 @@ public class MonthCalender {
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
+    }
+
+    public void notifyDataChanges() {
+        setMonthCalenderFragment();
+        start();
     }
 
     int getPaddingHorizontallyTV() {

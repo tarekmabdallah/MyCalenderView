@@ -104,11 +104,11 @@ public final class MonthCalenderFragment extends Fragment {
                             dayTV.setBackgroundColor(getColor(context, monthCalender.getResBackgroundColorIdOffDays()));
                         }
                         dayTV.setTextColor(getColor(context, monthCalender.getResTextColorIdDays()));
+                        dayTV.setOnClickListener(monthCalender.getOnClickListener());
                     } else { // next month
                         dayTV.setText(String.valueOf(newMonthDayNumber++));
                         dayTV.setTextColor(getColor(context, android.R.color.darker_gray));
                     }
-                    dayTV.setOnClickListener(monthCalender.getOnClickListener());
                 }
                 linearLayoutRow.addView(dayTV);
             }
