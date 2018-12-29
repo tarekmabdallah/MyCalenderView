@@ -99,12 +99,13 @@ public final class MonthCalenderFragment extends Fragment {
                     dayTV.setText(EMPTY_STRING);
                 } else {
                     if (dayNumber <= presenter.getMonthDaysCount()) {
-                        dayTV.setText(String.valueOf(dayNumber++));
+                        dayTV.setText(String.valueOf(dayNumber));
                         if (offDays.contains(dayNumber)) {
                             dayTV.setBackgroundColor(getColor(context, monthCalender.getResBackgroundColorIdOffDays()));
                         }
                         dayTV.setTextColor(getColor(context, monthCalender.getResTextColorIdDays()));
                         dayTV.setOnClickListener(monthCalender.getOnClickListener());
+                        dayNumber++;
                     } else { // next month
                         dayTV.setText(String.valueOf(newMonthDayNumber++));
                         dayTV.setTextColor(getColor(context, android.R.color.darker_gray));
