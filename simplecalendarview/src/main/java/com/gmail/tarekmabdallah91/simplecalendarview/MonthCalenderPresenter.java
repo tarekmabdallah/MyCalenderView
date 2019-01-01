@@ -43,7 +43,7 @@ final class MonthCalenderPresenter {
 
     private MonthCalenderPresenter() {
         calendar = Calendar.getInstance();
-        int MONTH = calendar.get(Calendar.MONTH) + ONE;
+        int MONTH = calendar.get(Calendar.MONTH);
         YEAR = calendar.get(Calendar.YEAR);
         setMonthDaysCount(MONTH, YEAR);
         int CURRENT_DAY = calendar.get(Calendar.DAY_OF_MONTH);
@@ -59,7 +59,7 @@ final class MonthCalenderPresenter {
     private void setFirstDayInMonth(int day, int month, int year) {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.DATE, day);
-        cal.set(Calendar.MONTH, month - ONE);
+        cal.set(Calendar.MONTH, month);
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.DAY_OF_MONTH, ONE);
         Date firstDayOfMonth = cal.getTime();
